@@ -118,7 +118,7 @@
   overflow: hidden;
   border-right: 2px solid #14b8a6;
   white-space: nowrap;
-  animation: typing 3s steps(40, end), glow 1s ease-in-out infinite;
+  animation: typing 3.5s steps(40, end), glow 1s ease-in-out infinite;
 }
 
 .float-animation {

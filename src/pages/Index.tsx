@@ -89,9 +89,11 @@ const Index = () => {
               Hi, I'm <span className="gradient-text">Ashiq</span>
             </h1>
             <div className="h-16 flex items-center justify-center">
-              <h2 className="text-2xl md:text-4xl font-medium typing-animation">
-                {typedText}
-              </h2>
+              <div className="w-fit">
+                <h2 className="text-2xl md:text-4xl font-medium typing-animation">
+                  {typedText}
+                </h2>
+              </div>
             </div>
           </div>
 
