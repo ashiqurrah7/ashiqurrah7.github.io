@@ -101,10 +101,10 @@ const Index = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3" onClick={() => scrollToSection('projects')}>
+            <Button size="lg" className="w-full sm:w-auto bg-teal-600 hover:bg-teal-700 text-white px-8 py-3" onClick={() => scrollToSection('projects')}>
               View My Work
             </Button>
-            <Button variant="outline" size="lg" className="border-teal-500 text-teal-500 hover:bg-teal-500/10 hover:text-white px-8 py-3" onClick={() => scrollToSection('contact')}>
+            <Button variant="outline" size="lg" className="w-full sm:w-auto border-teal-500 text-teal-500 hover:bg-teal-500/10 hover:text-white px-8 py-3" onClick={() => scrollToSection('contact')}>
               Get In Touch
             </Button>
           </div>
@@ -122,7 +122,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 float-animation">
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 float-animation">
           <div className="w-6 h-10 border-2 border-teal-400 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-teal-400 rounded-full mt-2 animate-pulse"></div>
           </div>
@@ -248,20 +248,20 @@ const Index = () => {
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 bg-slate-800/50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8 gradient-text">Let's Work Together</h2>
+          <h2 className="text-4xl font-bold mb-8 gradient-text pb-1">Let's Work Together</h2>
           <p className="text-xl text-slate-300 mb-12 leading-relaxed">
             I'm always interested in new opportunities and exciting projects.
             Let's discuss how we can bring your ideas to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href={links.mail} className="flex">
-              <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3">
+            <a href={links.mail} className="flex flex-col">
+              <Button size="lg" className="sm:flex-1 bg-teal-600 hover:bg-teal-700 text-white px-8 py-3">
                 <Mail className="w-5 h-5 mr-2" />
                 Email Me
               </Button>
             </a>
-            <a href={links.linkedin} target="_blank" className="flex">
-              <Button variant="outline" size="lg" className="border-teal-500 text-teal-500 hover:bg-teal-500/10 hover:text-white px-8 py-3">
+            <a href={links.linkedin} target="_blank" className="flex flex-col">
+              <Button variant="outline" size="lg" className="sm:flex-1 border-teal-500 text-teal-500 hover:bg-teal-500/10 hover:text-white px-8 py-3">
                 <Linkedin className="w-5 h-5 mr-2" />
                 Connect on LinkedIn
               </Button>
