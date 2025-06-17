@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -15,6 +14,13 @@ const Index = () => {
     }, 500);
     return () => clearTimeout(timer);
   }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const skills = [
     { name: 'React', category: 'Frontend' },
@@ -61,7 +67,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-teal-500/10 via-transparent to-transparent"></div>
         
@@ -83,10 +89,19 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3">
+            <Button 
+              size="lg" 
+              className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3"
+              onClick={() => scrollToSection('projects')}
+            >
               View My Work
             </Button>
-            <Button variant="outline" size="lg" className="border-teal-500 text-teal-400 hover:bg-teal-500/10 px-8 py-3">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-teal-500 text-teal-400 hover:bg-teal-500/10 px-8 py-3"
+              onClick={() => scrollToSection('contact')}
+            >
               Get In Touch
             </Button>
           </div>
@@ -112,7 +127,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4">
+      <section id="about" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 gradient-text">About Me</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -164,7 +179,7 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 px-4 bg-slate-800/50">
+      <section id="skills" className="py-20 px-4 bg-slate-800/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 gradient-text">Technical Skills</h2>
           <div className="flex flex-wrap justify-center gap-4">
@@ -182,7 +197,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 px-4">
+      <section id="projects" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -223,7 +238,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 bg-slate-800/50">
+      <section id="contact" className="py-20 px-4 bg-slate-800/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 gradient-text">Let's Work Together</h2>
           <p className="text-xl text-slate-300 mb-12 leading-relaxed">
