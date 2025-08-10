@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Smartphone } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Smartphone, BookOpen, Users, Award } from 'lucide-react';
 
 const Index = () => {
   const [typedText, setTypedText] = useState('');
@@ -75,6 +75,55 @@ const Index = () => {
       github: 'https://github.com/ashiqurrah7/meal_recommendation_system',
     }
   ];
+
+  const researchProjects = [
+    {
+      title: 'Machine Learning Optimization in Distributed Systems',
+      description: 'Research on optimizing machine learning algorithms for distributed computing environments, focusing on reducing latency and improving scalability.',
+      status: 'Published',
+      venue: 'IEEE Conference on Distributed Computing',
+      year: '2024',
+      technologies: ['Python', 'TensorFlow', 'Kubernetes', 'Apache Spark'],
+      collaborators: 3,
+      citations: 12,
+      link: '#'
+    },
+    {
+      title: 'Blockchain-Based Security Framework for IoT Networks',
+      description: 'Developing a novel security framework that leverages blockchain technology to enhance the security of Internet of Things (IoT) networks.',
+      status: 'Under Review',
+      venue: 'Journal of Network Security',
+      year: '2024',
+      technologies: ['Solidity', 'Ethereum', 'Node.js', 'IoT Protocols'],
+      collaborators: 2,
+      citations: 0,
+      link: '#'
+    },
+    {
+      title: 'Automated Code Review Using Natural Language Processing',
+      description: 'Investigating the use of NLP techniques to automate code review processes and improve software development efficiency.',
+      status: 'In Progress',
+      venue: 'ACM Software Engineering Conference',
+      year: '2025',
+      technologies: ['Python', 'BERT', 'Transformers', 'Git'],
+      collaborators: 1,
+      citations: 0,
+      link: '#'
+    }
+  ];
+
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'Published':
+        return 'bg-green-500/20 text-green-300 border-green-500/30';
+      case 'Under Review':
+        return 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30';
+      case 'In Progress':
+        return 'bg-blue-500/20 text-blue-300 border-blue-500/30';
+      default:
+        return 'bg-gray-500/20 text-gray-300 border-gray-500/30';
+    }
+  };
 
   return (
     <div className="min-h-screen bg-slate-900 text-white">
@@ -195,6 +244,70 @@ const Index = () => {
               >
                 {skill.name}
               </Badge>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Academic Research Section */}
+      <section id="academic-research" className="py-20 px-4 bg-slate-800/50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16 gradient-text">Academic Research</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {researchProjects.map((research, index) => (
+              <Card key={index} className="bg-slate-800 border-slate-700 hover:border-teal-500/50 transition-all hover:transform hover:scale-105">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-4">
+                    <Badge variant="outline" className={getStatusColor(research.status)}>
+                      {research.status}
+                    </Badge>
+                    <span className="text-sm text-slate-400">{research.year}</span>
+                  </div>
+                  <CardTitle className="text-xl gradient-text">{research.title}</CardTitle>
+                  <CardDescription className="text-slate-400">
+                    {research.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-sm text-slate-300 mb-2">
+                        <BookOpen className="w-4 h-4 inline mr-2" />
+                        {research.venue}
+                      </p>
+                      <div className="flex items-center gap-4 text-sm text-slate-400">
+                        <span className="flex items-center">
+                          <Users className="w-4 h-4 mr-1" />
+                          {research.collaborators} collaborators
+                        </span>
+                        {research.citations > 0 && (
+                          <span className="flex items-center">
+                            <Award className="w-4 h-4 mr-1" />
+                            {research.citations} citations
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {research.technologies.map((tech, techIndex) => (
+                        <Badge key={techIndex} variant="secondary" className="text-xs bg-teal-500/20 text-teal-300">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    
+                    <div className="flex gap-4">
+                      <a href={research.link} target="_blank" className="flex flex-1">
+                        <Button variant="outline" size="sm" className="flex-1 border-teal-500/30 text-teal-500 hover:bg-teal-500/10 hover:text-white">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          View Paper
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
