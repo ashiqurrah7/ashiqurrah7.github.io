@@ -1,8 +1,9 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Smartphone, BookOpen, Users, Award } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Smartphone, BookOpen, Users, Award, Shield, Brain } from 'lucide-react';
 
 const Index = () => {
   const [typedText, setTypedText] = useState('');
@@ -224,6 +225,20 @@ const Index = () => {
                   <Smartphone className="w-12 h-12 mx-auto mb-4 text-teal-400" />
                   <h4 className="text-lg font-semibold mb-2 gradient-text">Mobile</h4>
                   <p className="text-slate-400 text-sm">React Native, Flutter</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-slate-800 border-slate-700 hover:border-teal-500/50 transition-colors">
+                <CardContent className="p-6 text-center">
+                  <Shield className="w-12 h-12 mx-auto mb-4 text-teal-400" />
+                  <h4 className="text-lg font-semibold mb-2 gradient-text">Cybersecurity</h4>
+                  <p className="text-slate-400 text-sm">Penetration Testing, Network Security</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-slate-800 border-slate-700 hover:border-teal-500/50 transition-colors">
+                <CardContent className="p-6 text-center">
+                  <Brain className="w-12 h-12 mx-auto mb-4 text-teal-400" />
+                  <h4 className="text-lg font-semibold mb-2 gradient-text">AI & ML</h4>
+                  <p className="text-slate-400 text-sm">Machine Learning, Neural Networks</p>
                 </CardContent>
               </Card>
             </div>
