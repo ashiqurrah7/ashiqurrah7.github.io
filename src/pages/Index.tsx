@@ -79,52 +79,30 @@ const Index = () => {
 
   const researchProjects = [
     {
-      title: 'Machine Learning Optimization in Distributed Systems',
-      description: 'Research on optimizing machine learning algorithms for distributed computing environments, focusing on reducing latency and improving scalability.',
-      status: 'Published',
-      venue: 'IEEE Conference on Distributed Computing',
-      year: '2024',
-      technologies: ['Python', 'TensorFlow', 'Kubernetes', 'Apache Spark'],
-      collaborators: 3,
-      citations: 12,
-      link: '#'
-    },
-    {
-      title: 'Blockchain-Based Security Framework for IoT Networks',
-      description: 'Developing a novel security framework that leverages blockchain technology to enhance the security of Internet of Things (IoT) networks.',
-      status: 'Under Review',
-      venue: 'Journal of Network Security',
-      year: '2024',
-      technologies: ['Solidity', 'Ethereum', 'Node.js', 'IoT Protocols'],
-      collaborators: 2,
-      citations: 0,
-      link: '#'
-    },
-    {
-      title: 'Automated Code Review Using Natural Language Processing',
-      description: 'Investigating the use of NLP techniques to automate code review processes and improve software development efficiency.',
-      status: 'In Progress',
-      venue: 'ACM Software Engineering Conference',
+      title: 'Adaptive Graph Neural Networks for Generalized ERE',
+      description: 'An AI model that automatically uncovers relationships in text across domains like medicine and law, with ~99% accuracy and CPU-only training under 2 hours.',
       year: '2025',
-      technologies: ['Python', 'BERT', 'Transformers', 'Git'],
-      collaborators: 1,
-      citations: 0,
-      link: '#'
+      technologies: ['Multi-View Graphs', 'Entity and Relationship Extraction', 'Few-Shot Learning', 'Cross-domain NLP'],
+      collaborators: 3,
+      link: 'https://drive.google.com/file/d/1ABBWto7bRFDv3X_gwMxmizlst91V2_J5/view?usp=drive_link'
+    },
+    {
+      title: 'Does Big Data Really Need to Be Big?',
+      description: 'Developed a pipeline to uncover value in unused or “dark” data by transforming it into analyzable formats, offering organizations smarter ways to extract insights without needing massive datasets.',
+      year: '2025',
+      technologies: ['Dark Data', 'Data Transformation', 'Data Quality', 'QDDR'],
+      collaborators: 6,
+      link: 'https://drive.google.com/file/d/1RR7CyCBysWP-vbmmfNumOsE0FrIfGZLV/view?usp=drive_link'
+    },
+    {
+      title: 'A Survey on Social Engineering Attacks',
+      description: 'A comprehensive overview of how cybercriminals trick people into giving up sensitive information, examining tactics, real-world cases, psychological tricks, and how to defend against them.',
+      year: '2024',
+      technologies: ['Social Engineering', 'Phishing', 'Defense Mechanisms'],
+      collaborators: 2,
+      link: 'https://drive.google.com/file/d/1tfuL0R1weznMQEo4AR-l3YO3uTDEAa92/view?usp=drive_link'
     }
   ];
-
-  const getStatusColor = (status) => {
-    switch (status) {
-      case 'Published':
-        return 'bg-green-500/20 text-green-300 border-green-500/30';
-      case 'Under Review':
-        return 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30';
-      case 'In Progress':
-        return 'bg-blue-500/20 text-blue-300 border-blue-500/30';
-      default:
-        return 'bg-gray-500/20 text-gray-300 border-gray-500/30';
-    }
-  };
 
   return (
     <div className="min-h-screen bg-slate-900 text-white">
@@ -189,13 +167,14 @@ const Index = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-6 text-teal-400">Building the Future, One Line at a Time</h3>
               <p className="text-slate-300 text-lg mb-6 leading-relaxed">
-                With 3 years of experience in full-stack development, I specialize in creating
-                robust, scalable applications using modern technologies. My passion lies in solving
-                complex problems and delivering exceptional user experiences.
+                With 3 years of experience in full-stack development, I specialize in creating robust, scalable applications using modern technologies,
+                with a strong focus on cybersecurity best practices and AI/ML-driven solutions.
+                My passion lies in solving complex problems—whether securing applications against
+                evolving threats or building intelligent systems that learn and adapt—while delivering exceptional user experiences.
               </p>
               <p className="text-slate-300 text-lg leading-relaxed">
-                I believe in clean code, thoughtful architecture, and continuous learning.
-                When I'm not coding, you'll find me exploring new technologies or mentoring aspiring developers.
+                I believe in clean code, thoughtful architecture, and continuous learning. When I’m not coding, you’ll find me exploring
+                emerging trends in software development, artificial intelligence, machine learning, and cybersecurity or mentoring aspiring developers.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
@@ -231,14 +210,14 @@ const Index = () => {
                 <CardContent className="p-6 text-center">
                   <Shield className="w-12 h-12 mx-auto mb-4 text-teal-400" />
                   <h4 className="text-lg font-semibold mb-2 gradient-text">Cybersecurity</h4>
-                  <p className="text-slate-400 text-sm">Penetration Testing, Network Security</p>
+                  <p className="text-slate-400 text-sm">Anchore Engine, Nmap, Wireshark, Scapy, Hydra, Metasploit</p>
                 </CardContent>
               </Card>
               <Card className="bg-slate-800 border-slate-700 hover:border-teal-500/50 transition-colors">
                 <CardContent className="p-6 text-center">
                   <Brain className="w-12 h-12 mx-auto mb-4 text-teal-400" />
                   <h4 className="text-lg font-semibold mb-2 gradient-text">AI & ML</h4>
-                  <p className="text-slate-400 text-sm">Machine Learning, Neural Networks</p>
+                  <p className="text-slate-400 text-sm">Torch, TQDM, Pandas, Numpy, SKLearn, SentenceTransformers</p>
                 </CardContent>
               </Card>
             </div>
@@ -264,54 +243,41 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Academic Research Section */}
-      <section id="academic-research" className="py-20 px-4 bg-slate-800/50">
+      {/* Research Projects Section */}
+      <section id="research-projects" className="py-20 px-4 bg-slate-800/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 gradient-text">Academic Research</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 pb-1 gradient-text">Research Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {researchProjects.map((research, index) => (
               <Card key={index} className="bg-slate-800 border-slate-700 hover:border-teal-500/50 transition-all hover:transform hover:scale-105">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
-                    <Badge variant="outline" className={getStatusColor(research.status)}>
-                      {research.status}
-                    </Badge>
                     <span className="text-sm text-slate-400">{research.year}</span>
                   </div>
                   <CardTitle className="text-xl gradient-text">{research.title}</CardTitle>
-                  <CardDescription className="text-slate-400">
+                  <CardDescription className="text-slate-400 h-[4rem]">
                     {research.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div>
-                      <p className="text-sm text-slate-300 mb-2">
-                        <BookOpen className="w-4 h-4 inline mr-2" />
-                        {research.venue}
-                      </p>
                       <div className="flex items-center gap-4 text-sm text-slate-400">
                         <span className="flex items-center">
                           <Users className="w-4 h-4 mr-1" />
                           {research.collaborators} collaborators
                         </span>
-                        {research.citations > 0 && (
-                          <span className="flex items-center">
-                            <Award className="w-4 h-4 mr-1" />
-                            {research.citations} citations
-                          </span>
-                        )}
                       </div>
                     </div>
-                    
-                    <div className="flex flex-wrap gap-2">
+
+                    <div className="flex flex-wrap gap-2 h-[5rem]">
                       {research.technologies.map((tech, techIndex) => (
                         <Badge key={techIndex} variant="secondary" className="text-xs bg-teal-500/20 text-teal-300">
                           {tech}
                         </Badge>
                       ))}
                     </div>
-                    
+
                     <div className="flex gap-4">
                       <a href={research.link} target="_blank" className="flex flex-1">
                         <Button variant="outline" size="sm" className="flex-1 border-teal-500/30 text-teal-500 hover:bg-teal-500/10 hover:text-white">
@@ -331,7 +297,7 @@ const Index = () => {
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 gradient-text pb-1">Featured Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="bg-slate-800 border-slate-700 hover:border-teal-500/50 transition-all hover:transform hover:scale-105">
