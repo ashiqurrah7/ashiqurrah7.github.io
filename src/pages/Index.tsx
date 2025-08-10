@@ -217,7 +217,7 @@ const Index = () => {
                 <CardContent className="p-6 text-center">
                   <Brain className="w-12 h-12 mx-auto mb-4 text-teal-400" />
                   <h4 className="text-lg font-semibold mb-2 gradient-text">AI & ML</h4>
-                  <p className="text-slate-400 text-sm">Torch, TQDM, Pandas, Numpy, SKLearn, SentenceTransformers</p>
+                  <p className="text-slate-400 text-sm">Torch, TQDM, Pandas, Numpy, SKLearn</p>
                 </CardContent>
               </Card>
             </div>
@@ -254,13 +254,13 @@ const Index = () => {
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-sm text-slate-400">{research.year}</span>
                   </div>
-                  <CardTitle className="text-xl gradient-text">{research.title}</CardTitle>
+                  <CardTitle className="text-xl gradient-text h-[3.5rem]">{research.title}</CardTitle>
                   <CardDescription className="text-slate-400 h-[4rem]">
                     {research.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
+                  <div className="space-y-4 mt-5 md:mt-auto">
                     <div>
                       <div className="flex items-center gap-4 text-sm text-slate-400">
                         <span className="flex items-center">
